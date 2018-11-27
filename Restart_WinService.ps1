@@ -1,0 +1,13 @@
+##Este cmdlet irá gravar na memória a lista de servidores e criar a variagel $server##
+$server = Get-Content "C:\Servidores.txt"
+
+Clear-Host
+
+##Este proximo cmdlet irá printar na tela a lista dos servidores do arquivo .txt##
+$server 
+
+##Este cmdlet irá executar o restart do seriço nos servidores da variavel $server##
+Get-Service -Name "seviço" -ComputerName $server | restart-Service
+
+##cmdlet para imprimir o status do serviço nos servidores da variavel $server##
+Get-Service -name "serviço" -ComputerName $server
